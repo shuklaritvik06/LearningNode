@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <%- include('./partials/header')%>
+    <title>Hello 👋 | Welcome to my Chat Application</title>
+</head>
+<body>
+<div class="container py-4">
+<header class="pb-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4 fw-bold">Chat App</span>
+    </a>
+</header>
+    <div class="bg-light col-full p-5" id="content-area">
+        <form action="/" id="nameForm" method="post">
+            <label for="name" class="form-label">Name</label><input type="text" name="name" id="name" class="form-control" autocomplete="off" required>
+            <button type="submit" class="btn btn-warning mt-3">Enter room</button>
+        </form>
+    </div>
+    <%- include('./partials/footer')%>
+</div>
+</body>
+</html>

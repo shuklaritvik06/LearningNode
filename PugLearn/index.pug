@@ -1,0 +1,104 @@
+doctype html
+html
+    include includes/header
+    body
+        h1 Hello World
+        p This is a paragraph
+        p. 
+            This is a paragraph
+            with multiple lines
+        p
+            | This is a paragraph
+            | with multiple lines
+        |
+        |    
+        img(src="", alt="", srcset="") 
+        |
+        |  
+        a(href="http://www.example.com") Example
+        |
+        |
+        a(href="http://www.example.com", target="_blank") Example
+        |
+        |
+        - var a = "Hello"
+        - var b = "<b>World!</b>"    // Escape hota hai ye
+        p #{a}
+        p !{b}
+        p. 
+            This is #[strong a paragraph]
+            with #[em multiple lines]
+        |
+        |
+        p#id This is a paragraph
+        p.class This is a paragraph
+        .class This is a div 
+        - var c = "Hello"
+        button(class=`btn-${c}`) Click Me
+        button(class!="<hello>") Click Me
+        button(class="<hello>") Click Me
+        a(style={color: "red", "font-size": "20px"}) Click Me
+        - var classes = ["class1", "class2"]
+        button(class=classes) Click Me
+        - var attributes = {href: "http://www.example.com", target: "_blank"}
+        a#myid&attributes(attributes) Hello
+        - var number = 10
+        case number
+            when 0
+                p Zero
+            when 1
+                p One
+            default
+                p Number of friends are #{number}
+        case number
+            when 0: p Zero
+            when 1: p One
+            default: p Number of friends are #{number}
+        - for (var i = 0; i < 10; i++)
+            p= i
+        - for (var i = 0; i < 10; i++)
+            li item
+              
+        - var items = ["item1", "item2", "item3"]
+        ul
+            each item in items
+                li= item
+            else
+                li No items found    
+        //- NO ESCAPE        
+        p!= "<b>Hello</b>"
+        //- ESCAPE
+        p= "<b>Hello</b>"
+        // 
+          This is a
+           Comment
+           Multiline
+        - var obj = {name: "John", age: 30}
+        - var flag = true
+        if obj.name == "John"
+            p Hello John
+        else if obj.age == 30
+            p Hello 30
+        else if flag
+             p Hello Flag
+        else
+            p Hello World
+        mixin hello(name)
+            p Hello #{name}
+        +hello("John")
+        p.hello
+        mixin hey(name)
+            p.class= name
+        +hey("John")
+        mixin blockCode(name)
+            p= name
+            if block
+                block
+        +blockCode("John")
+            p This is a block
+            p Mixin Block
+        mixin rest(id,...rest)
+            p(id=id)
+            each item in rest
+                p= item
+        +rest("John", "Hello", "World")

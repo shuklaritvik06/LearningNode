@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header')%>
+    <script>
+        const name = "<%= name%>";
+    </script>
+    <script src="http://localhost:3000/socket.io/socket.io.js" defer></script>
+    <script src="/client.js" defer></script>
+    <title>Chat App</title>
+</head>
+<body>
+<div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4 fw-bold">Chat App</span>
+        </a>
+    </header>
+    <div class="bg-light col-full p-5" id="content-area">
+        <div id="message-area">
+            <div class="border border-1 p-3 rounded-2 border-warning d-flex mb-3">Welcome to my Chat Application 💜 😄</div>
+        </div>
+        <form action="" id="messageForm">
+            <label for="message" class="form-label">Message</label><input type="text" name="message" id="message" class="form-control" autocomplete="off" required>
+            <button type="submit" class="btn btn-warning mt-3">Send Message</button>
+        </form>
+    </div>
+    <%- include('./partials/footer')%>
+</div>
+</body>
+</html>

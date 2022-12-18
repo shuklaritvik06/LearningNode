@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <form action="/upload">
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload" id="upload">
+    </form>
+    <div id="Output"></div>
+    <script>
+        const file = document.getElementById('file');
+        const Output = document.getElementById('Output');
+        const uploadButton = document.getElementById("upload");
+
+        uploadButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            const fileReader = new FileReader();
+            const myFile = file.files[0];
+            fileReader.onload = async function(e){
+                console.log(e.target);
+                const partSize = 3000;
+                const parts = Math.ceil(e.target.result.byteLength/partSize);
+                const fileName = myFile.name;
+                for (let i = 0; i <= parts; i++) {
+                    const byteChunk = e.target.result.slice(i*partSize,(i+1)*partSize);
+                    await fetch(
+                        "/upload",
+                        {
+                            "method": "POST",
+                            "body": byteChunk,
+                            "headers": {
+                                "Content-Type": "application/octet-stream",
+                                "Content-Length": byteChunk.byteLength,
+                                "file-name": fileName,
+                            }
+                        }
+                    );
+                    Output.textContent = Math.round(i* 100/parts,0) + "%"
+                }
+            };
+            fileReader.readAsArrayBuffer(myFile);
+        })
+    </script>
+</body>
+</html>

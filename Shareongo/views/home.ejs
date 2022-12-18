@@ -1,0 +1,40 @@
+<%-include('partials/header')%>
+  <body>
+     <div class="upload">
+      <div class="drop-Box">
+        <div class="dropZone">
+         <div class="file">
+        <img src="img.jpg" alt="" class="fileIcon">
+        </div>  
+        <div class="dropZoneText">
+          <input type="file" value="browse" class="fileBtn">
+          <p class="guide">Drag and drop your file here or <span class="browseText">browse</span></p>
+        </div>
+      </div>
+      <div class="url">
+        <input type="text" class="urlInput" readonly>
+        <img src="copy.svg" alt="" class="copy">
+      </div>
+      <form class="emailForm">
+      <div>
+         <h3>or Send it via mail</h3>
+        <input type="text" class="name" placeholder="Enter your name" name="name" required>
+        <input type="email" class="emailInput" placeholder="Enter email" name="email" required>
+        <button class="emailBtn" type="button">Send</button>
+      </div>
+    </form> 
+      <div class="details">
+       <p class="fileName"></p>
+       <p class="fileSize"></p>
+      </div>
+      <div class="group">
+      <div class="cta">
+        <button class="uploadBtn">Upload</button>
+        <button class="resetBtn">Reset</button>
+      </div>
+      </div>
+      </div>
+     </div>
+     <script src="script.js"></script>
+  </body>
+</html>

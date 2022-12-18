@@ -1,0 +1,22 @@
+{
+  "name": "order",
+  "version": "1.0.0",
+  "description": "cli for getting order data from the database",
+  "main": "command.js",
+  "preferGlobal": true,
+  "bin": "./command.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Ritvik Shukla",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "dotenv": "^16.0.0",
+    "inquirer": "^8.2.1",
+    "mongoose": "^6.2.5"
+  }
+}

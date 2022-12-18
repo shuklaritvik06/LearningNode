@@ -1,0 +1,21 @@
+{
+  "name": "git-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "console.log('Pre Commit')",
+      "pre-push": "console.log('Pre Push')"
+    }
+  },
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^8.0.2"
+  }
+}

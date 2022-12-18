@@ -1,0 +1,19 @@
+- pm2 start script
+- pm2 stop scriptId
+- pm2 restart scriptId
+- pm2 status scriptId
+- pm2 delete scriptId
+- pm2 list
+- pm2 start script --name scriptName
+- pm2 start script --watch
+- pm2 start script --restart-delay 10000
+- pm2 start script --max-memory-restart 100M
+- pm2 start script --cron "*/10 * * * *"
+- pm2 start script --cron "*/10 * * * *" --cron-timezone "America/Los_Angeles"
+- pm2 logs
+- pm2 monit
+- pm2 flush
+- pm2 start script -i 4
+- pm2 start script --ignore-watch="node_modules"
+- pm2 describe id
+- pm2 reloadLogs

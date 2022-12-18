@@ -1,0 +1,22 @@
+{
+  "name": "postbox",
+  "version": "1.0.0",
+  "description": "This build can be used to send a get,post,put,patch,delete request, using a UI. Made for enhancing skills",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "postman"
+  ],
+  "author": "shuklaritvik06",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
