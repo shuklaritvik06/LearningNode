@@ -1,6 +1,16 @@
 // Event Emitter
 
 const events = require('events');
+class Order extends EventEmitter{
+ orderNo = 0;
+ constructor(){super();} 
+ order(){
+   this.orderNo+=1;
+   this.emit("order",size,price);
+ }
+}
+const order = new Order();
+order.on("order",(size,price)=>{})
 const myEventEmitter = new events.EventEmitter();
 myEventEmitter.on('myevent',(argument)=>{
   console.log(argument);
