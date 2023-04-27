@@ -11,4 +11,4 @@ BlogMore is a Blogging App Made with Nodejs, MongoDB, ExpressJS, Ejs.
 
 User can write and edit blog in Markdown format for better ease.
 
-LIVE -  https://blogging-app-project.herokuapp.com/
+LIVE -  https://blogmore.onrender.com/
